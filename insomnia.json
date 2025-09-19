@@ -1,0 +1,131 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2025-09-19T00:00:00.000Z",
+    "__export_source": "insomnia.desktop.app:v2025.0.0",
+    "resources": [
+        {
+            "_id": "wrk_school_api",
+            "_type": "workspace",
+            "name": "School API",
+            "description": ""
+        },
+        {
+            "_id": "env_base",
+            "_type": "environment",
+            "parentId": "wrk_school_api",
+            "name": "Base Environment",
+            "data": {
+                "baseUrl": "http://localhost:8080"
+            }
+        },
+        {
+            "_id": "fld_institutions",
+            "_type": "request_group",
+            "parentId": "wrk_school_api",
+            "name": "Institutions"
+        },
+        {
+            "_id": "req_get_institutions",
+            "_type": "request",
+            "parentId": "fld_institutions",
+            "name": "GET /institutions",
+            "method": "GET",
+            "url": "{{ _.baseUrl }}/institutions"
+        },
+        {
+            "_id": "req_get_institution_by_id",
+            "_type": "request",
+            "parentId": "fld_institutions",
+            "name": "GET /institutions/{id}",
+            "method": "GET",
+            "url": "{{ _.baseUrl }}/institutions/1"
+        },
+        {
+            "_id": "req_post_institution",
+            "_type": "request",
+            "parentId": "fld_institutions",
+            "name": "POST /institutions",
+            "method": "POST",
+            "url": "{{ _.baseUrl }}/institutions",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n  \"name\": \"Escola Modelo\",\n  \"address\": \"Rua A, 100\",\n  \"city\": \"São Paulo\",\n  \"state\": \"SP\",\n  \"postalCode\": \"01000-000\",\n  \"phone\": \"+55 11 99999-9999\"\n}"
+            }
+        },
+        {
+            "_id": "req_put_institution",
+            "_type": "request",
+            "parentId": "fld_institutions",
+            "name": "PUT /institutions/{id}",
+            "method": "PUT",
+            "url": "{{ _.baseUrl }}/institutions/1",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n  \"name\": \"Escola Atualizada\",\n  \"address\": \"Rua B, 200\",\n  \"city\": \"São Paulo\",\n  \"state\": \"SP\",\n  \"postalCode\": \"01000-000\",\n  \"phone\": \"+55 11 88888-8888\"\n}"
+            }
+        },
+        {
+            "_id": "req_delete_institution",
+            "_type": "request",
+            "parentId": "fld_institutions",
+            "name": "DELETE /institutions/{id}",
+            "method": "DELETE",
+            "url": "{{ _.baseUrl }}/institutions/1"
+        },
+        {
+            "_id": "fld_students",
+            "_type": "request_group",
+            "parentId": "wrk_school_api",
+            "name": "Students"
+        },
+        {
+            "_id": "req_get_students",
+            "_type": "request",
+            "parentId": "fld_students",
+            "name": "GET /students",
+            "method": "GET",
+            "url": "{{ _.baseUrl }}/students"
+        },
+        {
+            "_id": "req_get_student_by_id",
+            "_type": "request",
+            "parentId": "fld_students",
+            "name": "GET /students/{id}",
+            "method": "GET",
+            "url": "{{ _.baseUrl }}/students/1"
+        },
+        {
+            "_id": "req_post_student",
+            "_type": "request",
+            "parentId": "fld_students",
+            "name": "POST /students",
+            "method": "POST",
+            "url": "{{ _.baseUrl }}/students",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n  \"firstName\": \"João\",\n  \"lastName\": \"Pereira\",\n  \"dateOfBirth\": \"2011-07-15T00:00:00\",\n  \"peopleInHousehold\": 4,\n  \"notes\": null,\n  \"institutionId\": 1\n}"
+            }
+        },
+        {
+            "_id": "req_put_student",
+            "_type": "request",
+            "parentId": "fld_students",
+            "name": "PUT /students/{id}",
+            "method": "PUT",
+            "url": "{{ _.baseUrl }}/students/1",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n  \"firstName\": \"João\",\n  \"lastName\": \"Pereira\",\n  \"dateOfBirth\": \"2011-07-15T00:00:00\",\n  \"peopleInHousehold\": 5,\n  \"notes\": \"Observação\",\n  \"institutionId\": 1\n}"
+            }
+        },
+        {
+            "_id": "req_delete_student",
+            "_type": "request",
+            "parentId": "fld_students",
+            "name": "DELETE /students/{id}",
+            "method": "DELETE",
+            "url": "{{ _.baseUrl }}/students/1"
+        }
+    ]
+}
